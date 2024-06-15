@@ -1,0 +1,28 @@
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .libCont {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+
+        .card {
+            margin: 1rem;
+            padding: 2rem;
+            background-color: #070029;
+            border: 0px solid transparent;
+            border-radius: 1rem;
+            box-shadow: 0 0.2rem 1rem #000000;
+
+            .user {
+                color: #cbc4dbaf;
+            }
+        }
+    }
+}
