@@ -13,7 +13,7 @@ const Login = () => {
             const user  = (await result).user;
             localStorage.setItem('token',token);
             localStorage.setItem('user', JSON.stringify(user));
-            navigate("/");
+            navigate("/dashboard");
             }catch(error){
                 console.log(error);
         }

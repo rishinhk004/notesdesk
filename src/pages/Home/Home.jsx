@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import Login from '../../components/login/Login';
+
 
 
 const Home = () => {
@@ -14,16 +16,11 @@ const Home = () => {
         }
     }, []);
     
-    useEffect(() => {
-        if (!token) {
-            navigate('/login');
-        }
-    }, [token, navigate]);
-
-    if (!token) {
-        return null; 
-    }
-
+   if(!token){
+    return <Login/>
+   }
+   else{
     return <h1>Hello, {user && user.displayName}</h1>;
+   }
 }
 export default Home;

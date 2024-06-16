@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .secCont {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .parent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 3rem;
+
+            .card {
+                height: 10rem;
+                width: 10rem;
+                overflow: hidden;
+                border: 1px solid #ffffff;
+                border-radius: 0;
+                padding: 0.5rem;
+                background-color: transparent;
+                box-shadow: none;
+                cursor: pointer;
+
+                .page {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                transition: ease 50ms;
+
+                &:hover {
+                    border: 4px solid #aaaaff;
+                    box-shadow: 0 0 2rem #aaaaff;
+                    border-radius: 0.3rem;
+                }
+            }
+
+        }
+    }
+}
