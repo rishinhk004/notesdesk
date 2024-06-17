@@ -6,6 +6,7 @@ import axios from "axios";
 const Subjects = () => {
     const { id } = useParams();
     const [subs, setSubs] = useState([]);
+    const [form, setForm] = useState(false);
     useEffect(() => {
         async function fetchData() {
             const data = await axios.get(`${import.meta.env.VITE_BACKEND_API}/subject/read/${id}`);
@@ -14,6 +15,9 @@ const Subjects = () => {
         }
         fetchData();
     }, []);
+    const toggleForm = () => {
+        form === false ? setForm(true) : setForm(false);
+    }
     console.log(subs);
     return (
 
@@ -26,6 +30,7 @@ const Subjects = () => {
                         </Link>
                     ))
                 }
+                <button className={styles.addSub} onClick={toggleForm}>+</button>
             </div>
         </div>
     );
