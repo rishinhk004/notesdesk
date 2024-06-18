@@ -17,7 +17,7 @@ const Form = () => {
                         lib: val
                     });
                     console.log(req);
-                    alert("Library created successfully:Reload the page to see the change.");
+                    alert("Library created successfully");
                 }
                 catch (err) {
                     console.log(err);
@@ -27,7 +27,6 @@ const Form = () => {
     );
 }
 const Libraries = () => {
-
     const deleteLibrary = async (id) => {
         try {
           await axios.put(`${import.meta.env.VITE_BACKEND_API}/library/delete/${id}`);

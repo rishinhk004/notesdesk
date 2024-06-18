@@ -1,6 +1,7 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../auth/firebase";
 import { useNavigate } from "react-router-dom";
+import styles from "./Login.module.scss"
 
 const Login = () => {
     const navigate = useNavigate();
@@ -19,9 +20,15 @@ const Login = () => {
         }
     }
   return (
-    <>
-    <button onClick={handleLogin}>Login with Google</button>
-    </>
+    <div className={styles.parent}>
+    <div className={styles.container}>
+      <h2>Welcome to the Notes Management System...</h2>
+      <p>You are nor signed in. Please Signin!!</p>
+      <button onClick={handleLogin} className={styles.sign_button}>
+        Sign in with Google
+      </button>
+    </div>
+  </div>
 )
 }
 export default Login;
