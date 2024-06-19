@@ -12,6 +12,7 @@ const Form = () => {
             <input type="text" value={val} onChange={(e) => setVal(e.target.value)} />
             <button onClick={async function (e) {
                 try {
+                    e.preventDefault();
                     let req = await axios.post(`${import.meta.env.VITE_BACKEND_API}/library/add`, {
                         user: JSON.parse(localStorage.getItem('user')).email,
                         lib: val

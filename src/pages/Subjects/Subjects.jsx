@@ -10,7 +10,7 @@ const Form = (props) => {
             <input type="text" value={val} onChange={(e) => setVal(e.target.value)} />
             <button onClick={async function (e) {
                 try {
-                    // e.preventDefault();
+                    e.preventDefault();
                     let req = await axios.post(`${import.meta.env.VITE_BACKEND_API}/subject/add`, {
                         user: JSON.parse(localStorage.getItem('user')).email,
                         sub: val,
