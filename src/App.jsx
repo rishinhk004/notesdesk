@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Home, Libraries, Subjects, Chapters } from "./pages/index";
 import Sections from "./pages/Sections/Sections";
 import Dashboard from "./components/Dashboard/Dashboard";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route element={<Chapters />} path='/libraries/:id/:subId' />
           <Route element={<Sections />} path='/libraries/:id/:subId/:chapId' />
         </Routes>
+        <Analytics />
       </BrowserRouter>
     </>
   )
