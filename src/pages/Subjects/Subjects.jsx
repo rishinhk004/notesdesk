@@ -27,7 +27,7 @@ const Form = (props) => {
                     });
                     if (req) {
                         setLoad("");
-                        alert("Subject created successfully:Reload the page to see the change.");
+                        alert("Subject created successfully.");
                     }
                 }
                 catch (err) {
