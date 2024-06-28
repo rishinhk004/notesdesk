@@ -6,7 +6,7 @@ const Form = (props) => {
     const [val, setVal] = useState("");
     const [load, setLoad] = useState("");
     const toggleForm = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         props.form === false ? props.setForm(true) : props.setForm(false);
     }
     return (
@@ -29,7 +29,7 @@ const Form = (props) => {
                     });
                     if (req) {
                         setLoad("");
-                        alert("Chapter created successfully:Reload the page to see the change.");
+                        alert("Chapter created successfully.");
                     }
                 }
                 catch (err) {

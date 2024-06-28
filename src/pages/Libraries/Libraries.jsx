@@ -27,7 +27,7 @@ const Form = (props) => {
                     });
                     if (req) {
                         setLoad("");
-                        alert("Library created successfully:Reload the page to see the change.");
+                        alert("Library created successfully.");
                     }
                 }
                 catch (err) {

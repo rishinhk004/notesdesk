@@ -33,7 +33,7 @@ const Form = (props) => {
                         chapterId: props.chapId
                     });
                     if (action) {
-                        alert("Page successfully added. Reload to see the change!");
+                        alert("Page successfully added.");
                         setLoad("");
                     }
 
@@ -52,6 +52,14 @@ const Sections = () => {
     const [secs, setSecs] = useState([]);
     const [form, setForm] = useState(false);
     const [loading, setLoading] = useState(true);
+    const deletePage = async (id) => {
+        try {
+            await axios.put(`${import.meta.env.VITE_BACKEND_API}/page/delete/${id}`);
+            alert("Chapter deleted successfully");
+        } catch (error) {
+            alert('Error deleting chapter:', error.message);
+        }
+    };
     useEffect(() => {
         async function fetchData() {
             const data = await axios.get(`${import.meta.env.VITE_BACKEND_API}/page/read/${chapId}`);
@@ -61,7 +69,7 @@ const Sections = () => {
             }
         }
         fetchData();
-    }, []);
+    }, [deletePage]);
 
     const toggleForm = () => {
         form === false ? setForm(true) : setForm(false);
@@ -80,6 +88,7 @@ const Sections = () => {
                                         <img src={item.page} alt={idx} className={styles.page} />
                                     </button>
                                     <h6>page {idx + 1}</h6>
+                                    <button onClick={() => deletePage(item.id)}>Delete</button>
                                 </div>
                             ))
                         }
